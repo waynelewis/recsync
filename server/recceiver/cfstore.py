@@ -185,7 +185,8 @@ class CFProcessor(service.Service):
 
             time.sleep(min(60, sleep))
             sleep *= 1.5
-            if self.running == 0 and sleep >= retry_limit:
+            #if self.running == 0 and sleep >= retry_limit:
+            if sleep >= retry_limit:
                 _log.debug("Abandoning clean.")
                 return
 
